@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="myPage.css" rel="stylesheet">
+    <title>my page</title>
+</head>
+<body>
+
+    <section id="menu">
+        <!--
+        <div class="logo">
+            <img class="logo_img" src="images/logo.png">
+            
+        </div>
+    --> <h2>My madrassa</h2>
+        <div class="items">
+                <li><i class="fa fa-tachometer"></i><a href = "#">Dashboard</a></li>
+                <li><i class="fa fa-bookmark"></i><a href = "#">Courses</a></li>
+                <li><i class="fa fa-pencil"></i><a href = "#">Homeworks</a></i></li>
+                <li><i class="fa fa-graduation-cap"></i><a href = "#">Students</a></i></li>
+        </div>
+
+    </section>
+    <section id="interface">
+        <h3 class="i-name">Dashboard</h3>
+
+        <div class="values">
+            <div class="val-box">
+                <i class="fa fa-graduation-cap"></i>
+                <div>
+                    <span>Students</span>
+                </div>
+            </div>
+            <div class="val-box" id="shopping">
+                <i class="fa fa-shopping-cart"></i>
+                <div>
+                    <span>Courses</span>
+                </div>
+            </div>
+            <div class="val-box" id="heart">
+                <i class="fa fa-heart"></i>
+                <div>
+                    <span>Likes</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--
+
+    
+    <div>
+        <h2>Post</h2>
+        <i class="fa-solid fa-plus"></i>
+        <div class="modify">modify</div>
+
+        <label>Students : </label>
+        <input type = "text" list ="students">
+        <datalist id = "students"></datalist>
+
+        <button class="courses">courses</button>
+
+        <button class="public">public</button>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="myFiles" accept="image/*" multiple />
+            <button>Submit</button>
+        </form>
+    </div>
+    <h2></h2>
+    <h3></h3>
+    -->
+    <script>
+        const form = document.getElementById('uploadForm');
+        const sendFiles = async() => {
+            const myFiles = document.getElementById('myFiles').files;
+
+            const formData = new FormData();
+
+            Object.keys(myFiles).forEach(key => {
+                formData.append(myFiles.item(key).name, myFiles.item(key))
+            })
+
+            const response = await fetch('http://localhost:3500/upload', {
+             method:'POST',
+             body: formData,
+            })
+
+            const json = await response.json();
+
+            const h2 = document.querySelector('h2');
+            h2.textContent = `Status: ${json?.status}`;
+
+            const h3 = document.querySelector('h3');
+            h3.textContent = json?.message;
+
+            console.log(json);
+
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            sendFiles();
+        })
+    </script>
+
+        
+    
+</body>
+</html>

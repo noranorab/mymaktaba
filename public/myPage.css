@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    width: 100%;
+    background: #E5E7EB;
+    position: relative;
+    display: flex;
+}
+
+#menu{
+    background: rgb(21, 27, 75);
+    border-radius: 25px;
+    padding: 30px 0 0 30px;
+    width: 300px;
+    height: 390px;
+}
+#menu h2{
+    color: white;
+}
+#menu .items{
+    margin-top: 40px;
+    text-align: left;
+}
+
+#menu .items li{
+    list-style: none;
+    padding : 15px 0;
+}
+#menu .items li:hover{
+    border-left: 4px solid rgba(255, 255, 255, 0.521);
+    background: rgba(170, 189, 250, 0.411);
+    width: 100%;
+    cursor: pointor;
+
+}
+#menu .items li:hover::after{
+    border-left: none;
+
+}
+
+/*
+#menu .items li:nth-child(2){
+    border-left: 4px solid rgba(255, 255, 255, 0.521);
+}
+#menu .items li:nth-child(3){
+    border-left: 4px solid rgba(255, 255, 255, 0.514);
+}
+#menu .items li:nth-child(4){
+    border-left: 4px solid rgba(255, 255, 255, 0.534);
+}
+*/
+#menu .items li i{
+    color : rgb(161, 158, 145);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 10px 0 25px;
+}
+#menu .items li:hover i,
+#menu .items li:hover a{
+    color: white;
+}
+
+#menu .items li a{
+    text-decoration: none;
+    color: rgb(164, 141, 151);
+    font-weight: 300px;
+    transition: 0.3s ease;
+}
+#interface{
+    width: calc(100% - 300px);
+}
+.i-name{
+    color: rgb(71, 71, 71);
+    padding: 30px 30px 0 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.values{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#heart i{
+    background-color: red;
+}
+#shopping i{
+    background-color: grey;
+}
+.values .val-box{
+    background: #fff;
+    width: 235px;
+    padding: 16px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.values .val-box i{
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    background-color: chartreuse;
+    margin-right: 15px;
+
+}
+.values .val-box span{
+    font-size: 15px;
+    color: grey;
+}
