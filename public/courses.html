@@ -24,8 +24,27 @@
     <section class="section" id="section2">
         <ul>
             <li><h5>Title : <input type="text" name="post_title" placeholder="Enter a title"></h5> </li>
-            <li>Choose a color</li>
-            <li>upload a file</li>
+            <li><h5>Choose a color</h5>
+                <div class="wrapper">
+                    <div class="holder">
+                        <label for="color"></label>
+                        <input type="color" id="color"/>
+                    </div>
+                </div>
+                <script>
+                    const colorInput = document.getElementById("color");
+                    colorInput.addEventListener("click", ()=>{
+                        console.log(document.getElementById("color").value);
+                    })
+                </script>
+            
+            </li>
+            <li><h5>upload a file</h5>
+                <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="myFiles" accept="image/*" />
+                <button>Submit</button>
+                </form>
+            </li>
         </ul>
         
 

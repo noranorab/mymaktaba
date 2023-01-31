@@ -26,3 +26,8 @@ ul.addEventListener('click', (event) => {
         }
     }
 })
+
+const colorInput = document.getElementById("color");
+        colorInput.addEventListener("click", ()=>{
+            console.log(document.getElementById("color").value);
+        })
