@@ -1,6 +1,6 @@
 const ul = document.querySelector('#posts');
 
-
+/*
 ul.addEventListener('click', (event) => {
     if (event.target.tagName == 'BUTTON'){
         const button = event.target;
@@ -26,8 +26,9 @@ ul.addEventListener('click', (event) => {
         }
     }
 })
+*/
 
 const colorInput = document.getElementById("color");
-        colorInput.addEventListener("click", ()=>{
-            console.log(document.getElementById("color").value);
-        })
+colorInput.addEventListener("click", ()=>{
+    console.log(document.getElementById("color").value);
+});
