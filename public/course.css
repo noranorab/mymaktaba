@@ -31,6 +31,7 @@ ul{
     border-radius: 10px;
     padding: 20px;
     padding-right: 50px;
+    box-shadow: 1px 1px 5px ;
 }
 .post ul{
     flex-direction: column;
@@ -41,12 +42,13 @@ ul{
 }
 h3{
    color: white; 
+  
 }
 
 .wrapper{
     margin-left: 10px;
 }
-
+/*
 .holder{
     padding: 3px;
     width: 25px;
@@ -58,6 +60,7 @@ h3{
     justify-content: center;
     position: relative;
 }
+*/
 h5 .choose_color{
     position: relative;
 }
@@ -82,6 +85,11 @@ h5 .choose_color{
 }
 
 #color{
-    width: 20px;
-    border-radius: 100%;
+    width: 25px;
+    height: 20px;
+    border-radius: 5px;
+}
+.create_post{
+    margin-left: 100px;
+    margin-top: 35px;
 }
